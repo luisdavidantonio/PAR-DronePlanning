@@ -1,0 +1,126 @@
+Type-checking fly
+...action passes type checking.
+Type-checking inspect
+...action passes type checking.
+Type-checking pick-up-supply
+...action passes type checking.
+Type-checking deliver-supply
+...action passes type checking.
+Type-checking recharge
+...action passes type checking.
+Checking plan: plans/small-A-lama
+Plan to validate:
+
+Plan size: 11
+1:
+(pick-up-supply dronea kit1 depot)
+ 
+2:
+(fly dronea depot charging b4 b1 b3)
+ 
+3:
+(fly dronea charging s3 b3 b1 b2)
+ 
+4:
+(inspect dronea s3)
+ 
+5:
+(fly dronea s3 charging b2 b1 b1)
+ 
+6:
+(recharge dronea charging b1 b4)
+ 
+7:
+(fly dronea charging depot b4 b1 b3)
+ 
+8:
+(fly dronea depot s1 b3 b1 b2)
+ 
+9:
+(deliver-supply dronea kit1 s1)
+ 
+10:
+(fly dronea s1 s2 b2 b1 b1)
+ 
+11:
+(inspect dronea s2)
+ 
+
+Plan Validation details
+-----------------------
+
+Checking next happening (time 1)
+Deleting (supply-at kit1 depot)
+Deleting (empty dronea)
+Adding (carrying dronea kit1)
+Updating (total-cost) (0) by 1 increase
+
+Checking next happening (time 2)
+Deleting (at dronea depot)
+Deleting (battery dronea b4)
+Adding (at dronea charging)
+Adding (battery dronea b3)
+Updating (total-cost) (1) by 1 increase
+
+Checking next happening (time 3)
+Deleting (at dronea charging)
+Deleting (battery dronea b3)
+Adding (at dronea s3)
+Adding (battery dronea b2)
+Updating (total-cost) (2) by 1 increase
+
+Checking next happening (time 4)
+Adding (inspected s3)
+Updating (total-cost) (3) by 1 increase
+
+Checking next happening (time 5)
+Deleting (at dronea s3)
+Deleting (battery dronea b2)
+Adding (at dronea charging)
+Adding (battery dronea b1)
+Updating (total-cost) (4) by 1 increase
+
+Checking next happening (time 6)
+Deleting (battery dronea b1)
+Adding (battery dronea b4)
+Updating (total-cost) (5) by 1 increase
+
+Checking next happening (time 7)
+Deleting (at dronea charging)
+Deleting (battery dronea b4)
+Adding (at dronea depot)
+Adding (battery dronea b3)
+Updating (total-cost) (6) by 1 increase
+
+Checking next happening (time 8)
+Deleting (at dronea depot)
+Deleting (battery dronea b3)
+Adding (at dronea s1)
+Adding (battery dronea b2)
+Updating (total-cost) (7) by 1 increase
+
+Checking next happening (time 9)
+Deleting (carrying dronea kit1)
+Deleting (needs kit1 s1)
+Adding (empty dronea)
+Adding (delivered kit1 s1)
+Updating (total-cost) (8) by 1 increase
+
+Checking next happening (time 10)
+Deleting (at dronea s1)
+Deleting (battery dronea b2)
+Adding (at dronea s2)
+Adding (battery dronea b1)
+Updating (total-cost) (9) by 1 increase
+
+Checking next happening (time 11)
+Adding (inspected s2)
+Updating (total-cost) (10) by 1 increase
+Plan executed successfully - checking goal
+Plan valid
+Final value: 11 
+
+Successful plans:
+Value: 11
+ plans/small-A-lama 11 
+

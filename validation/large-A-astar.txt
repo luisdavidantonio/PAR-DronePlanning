@@ -1,0 +1,233 @@
+Type-checking fly
+...action passes type checking.
+Type-checking inspect
+...action passes type checking.
+Type-checking pick-up-supply
+...action passes type checking.
+Type-checking deliver-supply
+...action passes type checking.
+Type-checking recharge
+...action passes type checking.
+Checking plan: plans/large-A-astar
+Plan to validate:
+
+Plan size: 22
+1:
+(pick-up-supply dronea medkit1 depot1)
+ 
+2:
+(pick-up-supply dronec comms1 depot2)
+ 
+3:
+(fly dronec depot2 charging3 b6 b1 b5)
+ 
+4:
+(fly droneb charging2 charging3 b6 b2 b4)
+ 
+5:
+(fly droneb charging3 depot2 b4 b1 b3)
+ 
+6:
+(fly dronec charging3 charging2 b5 b2 b3)
+ 
+7:
+(pick-up-supply droneb medkit2 depot2)
+ 
+8:
+(fly droneb depot2 s5 b3 b1 b2)
+ 
+9:
+(deliver-supply droneb medkit2 s5)
+ 
+10:
+(fly droneb s5 s6 b2 b2 b0)
+ 
+11:
+(inspect droneb s6)
+ 
+12:
+(fly dronec charging2 s3 b3 b1 b2)
+ 
+13:
+(deliver-supply dronec comms1 s3)
+ 
+14:
+(fly dronec s3 s4 b2 b1 b1)
+ 
+15:
+(inspect dronec s4)
+ 
+16:
+(fly dronea depot1 s1 b6 b1 b5)
+ 
+17:
+(deliver-supply dronea medkit1 s1)
+ 
+18:
+(fly dronea s1 depot1 b5 b1 b4)
+ 
+19:
+(pick-up-supply dronea water1 depot1)
+ 
+20:
+(fly dronea depot1 s2 b4 b2 b2)
+ 
+21:
+(deliver-supply dronea water1 s2)
+ 
+22:
+(inspect dronea s2)
+ 
+
+Plan Validation details
+-----------------------
+
+Checking next happening (time 1)
+Deleting (supply-at medkit1 depot1)
+Deleting (empty dronea)
+Adding (carrying dronea medkit1)
+Updating (total-cost) (0) by 1 increase
+
+Checking next happening (time 2)
+Deleting (supply-at comms1 depot2)
+Deleting (empty dronec)
+Adding (carrying dronec comms1)
+Updating (total-cost) (1) by 1 increase
+
+Checking next happening (time 3)
+Deleting (at dronec depot2)
+Deleting (battery dronec b6)
+Adding (at dronec charging3)
+Adding (battery dronec b5)
+Updating (total-cost) (2) by 1 increase
+
+Checking next happening (time 4)
+Deleting (at droneb charging2)
+Deleting (battery droneb b6)
+Adding (at droneb charging3)
+Adding (battery droneb b4)
+Updating (total-cost) (3) by 2 increase
+
+Checking next happening (time 5)
+Deleting (at droneb charging3)
+Deleting (battery droneb b4)
+Adding (at droneb depot2)
+Adding (battery droneb b3)
+Updating (total-cost) (5) by 1 increase
+
+Checking next happening (time 6)
+Deleting (at dronec charging3)
+Deleting (battery dronec b5)
+Adding (at dronec charging2)
+Adding (battery dronec b3)
+Updating (total-cost) (6) by 2 increase
+
+Checking next happening (time 7)
+Deleting (supply-at medkit2 depot2)
+Deleting (empty droneb)
+Adding (carrying droneb medkit2)
+Updating (total-cost) (8) by 1 increase
+
+Checking next happening (time 8)
+Deleting (at droneb depot2)
+Deleting (battery droneb b3)
+Adding (at droneb s5)
+Adding (battery droneb b2)
+Updating (total-cost) (9) by 1 increase
+
+Checking next happening (time 9)
+Deleting (carrying droneb medkit2)
+Deleting (needs medkit2 s5)
+Adding (empty droneb)
+Adding (delivered medkit2 s5)
+Updating (total-cost) (10) by 1 increase
+
+Checking next happening (time 10)
+Deleting (at droneb s5)
+Deleting (battery droneb b2)
+Adding (at droneb s6)
+Adding (battery droneb b0)
+Updating (total-cost) (11) by 2 increase
+
+Checking next happening (time 11)
+Adding (inspected s6)
+Updating (total-cost) (13) by 1 increase
+
+Checking next happening (time 12)
+Deleting (at dronec charging2)
+Deleting (battery dronec b3)
+Adding (at dronec s3)
+Adding (battery dronec b2)
+Updating (total-cost) (14) by 1 increase
+
+Checking next happening (time 13)
+Deleting (carrying dronec comms1)
+Deleting (needs comms1 s3)
+Adding (empty dronec)
+Adding (delivered comms1 s3)
+Adding (accessible s4)
+Updating (total-cost) (15) by 1 increase
+
+Checking next happening (time 14)
+Deleting (at dronec s3)
+Deleting (battery dronec b2)
+Adding (at dronec s4)
+Adding (battery dronec b1)
+Updating (total-cost) (16) by 1 increase
+
+Checking next happening (time 15)
+Adding (inspected s4)
+Updating (total-cost) (17) by 1 increase
+
+Checking next happening (time 16)
+Deleting (at dronea depot1)
+Deleting (battery dronea b6)
+Adding (at dronea s1)
+Adding (battery dronea b5)
+Updating (total-cost) (18) by 1 increase
+
+Checking next happening (time 17)
+Deleting (carrying dronea medkit1)
+Deleting (needs medkit1 s1)
+Adding (empty dronea)
+Adding (delivered medkit1 s1)
+Updating (total-cost) (19) by 1 increase
+
+Checking next happening (time 18)
+Deleting (at dronea s1)
+Deleting (battery dronea b5)
+Adding (at dronea depot1)
+Adding (battery dronea b4)
+Updating (total-cost) (20) by 1 increase
+
+Checking next happening (time 19)
+Deleting (supply-at water1 depot1)
+Deleting (empty dronea)
+Adding (carrying dronea water1)
+Updating (total-cost) (21) by 1 increase
+
+Checking next happening (time 20)
+Deleting (at dronea depot1)
+Deleting (battery dronea b4)
+Adding (at dronea s2)
+Adding (battery dronea b2)
+Updating (total-cost) (22) by 2 increase
+
+Checking next happening (time 21)
+Deleting (carrying dronea water1)
+Deleting (needs water1 s2)
+Adding (empty dronea)
+Adding (delivered water1 s2)
+Updating (total-cost) (24) by 1 increase
+
+Checking next happening (time 22)
+Adding (inspected s2)
+Updating (total-cost) (25) by 1 increase
+Plan executed successfully - checking goal
+Plan valid
+Final value: 26 
+
+Successful plans:
+Value: 26
+ plans/large-A-astar 26 
+
